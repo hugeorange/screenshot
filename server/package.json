@@ -1,0 +1,45 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "description": "基于puppeteer的node截图/前端react组件",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "serve": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugeorange/screenshot.git"
+  },
+  "keywords": [
+    "截图puppeteer",
+    "screenshot",
+    "react"
+  ],
+  "author": "YAOLEI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugeorange/screenshot/issues"
+  },
+  "homepage": "https://github.com/hugeorange/screenshot#readme",
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "puppeteer": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.3",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa-static": "^4.0.2",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/puppeteer": "^5.4.4",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}
