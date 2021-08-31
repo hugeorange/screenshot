@@ -4,3 +4,4 @@
 - client/* client 前端代码
 - 分别启动前后端服务在页面上查看演示
 - buffer返回 https://www.cnblogs.com/penghuwan/p/12053775.html
+- react组件实现方式 https://github.com/BobbyLH/template-extract-plugin/issues/7
