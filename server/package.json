@@ -4,9 +4,10 @@
   "description": "基于puppeteer的node截图/前端react组件",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js",
-    "serve": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon  --watch src -e ts --exec ts-node src/index.ts",
+    "dev1": "nodemon --watch src/**/* -e ts,tsx --exec ts-node src/index.ts",
+    "dev2": "tsc && node src/index.js",
+    "start": "tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",

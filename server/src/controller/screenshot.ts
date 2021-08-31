@@ -67,20 +67,23 @@ export const urlToImage = async (ctx: ParameterizedContext) => {
   }
 
 
-  const base64 = await page.screenshot({ encoding: "base64" });
-  const imgUrl = `data:image/png;base64,${base64}`
-  // 直接返回 
-  // ctx.body = `<img src="${url}">`
-
+  // const base64 = await page.screenshot({ encoding: "base64" });
+  // const imgUrl = `data:image/png;base64,${base64}`
+  const buffer = await page.screenshot();
+  ctx.set({
+    "Content-Type": "application/octet-stream", //告诉浏览器这是一个二进制文件
+    "Content-Disposition": "attachment; filename=buffer.jpg", //告诉浏览器这是一个需要下载的文件
+  });
+  ctx.body = buffer;
 
   // 关闭实例
   // await browser.close();
 
-  ctx.body = {
-    data: imgUrl,
-    code: 200,
-    message: "成功~",
-  };
+  // ctx.body = {
+  //   data: buffer,
+  //   code: 200,
+  //   message: "成功~",
+  // };
 };
 
 // 第一种 buffer返回

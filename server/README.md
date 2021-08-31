@@ -7,3 +7,5 @@ puppeteer截图 、React、Koa
 - https://cloud.tencent.com/developer/article/1470473
 - https://tech.youzan.com/shi-yong-puppeteerda-jian-tong-hai-bao-xuan-ran-fu-wu/
 - https://www.dilatoit.com/zh/2021/05/11/puppeteershiyongjiaocheng.html
+- https://zhuanlan.zhihu.com/p/30203613 介绍
+- 英语流利说 https://mp.weixin.qq.com/s/IOybLG2B2EiNMNQ-kW1-7A

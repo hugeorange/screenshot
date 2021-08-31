@@ -20,7 +20,7 @@ router.get("/", (ctx) => {
 });
 
 router.get("/urltoimage1", urlToImage);
-router.post("/urltoimage", urlToImage);
+router.post("/htmltoimage", urlToImage);
 router.get("/urltopdf", urlToPDF);
 app.use(koaStatic('./static'))
 app.use(koaCors());
