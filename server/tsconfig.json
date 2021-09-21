@@ -1,7 +1,10 @@
 {
   "compileOnSave": true,
+  // https://lq782655835.github.io/blogs/project/ts-tsconfig.html
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es5", // 编译目标平台
+    // 指定生成哪个模块系统代码。枚举值："None"， "CommonJS"， "AMD"， "System"， "UMD"， "ES6"， "ES2015"，"ESNext"。默认值根据--target选项不同而不同，当target设置为ES6时，默认module为“ES6”，否则为“commonjs”
+    // 通常使用ES6的模块来写ts代码，然而2016年1月以前，基本上没有浏览器原生支持ES6的模块系统，所以需要转换为不同的模块系统，如：CommonJS、AMD、SystemJS等，而module选项就是指定编译使用对应的模块系统。
     "module": "commonjs",
     "strict": true,
     "noImplicitAny": false,
@@ -17,8 +20,16 @@
     "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true
+    "removeComments": true,
+    "importHelpers": true,
+    "outDir": "./dist", // 编译后的目录
+    "declaration": true,
+    "declarationDir": "./file", // 指定生成声明文件存放目录
+    "esModuleInterop": true, // ts2.7 允许export=导出，由import from 导入，不用 import * as Koa from 'koa'
   },
+  "files": [   // 指定待编译文件
+    "./src/index.ts"  
+  ],
   "exclude": [
     "node_modules*"
   ]

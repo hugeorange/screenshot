@@ -1,8 +1,6 @@
 import { ParameterizedContext } from "Koa";
-import * as puppeteer from "puppeteer";
+import puppeteer from "puppeteer";
 import { Browser } from "puppeteer";
-
-import { htmlstr } from "../config/index";
 
 interface paramsType {
   url?: string; // 指定url截图
@@ -21,7 +19,7 @@ let browser: Browser;
 export const urlToImage = async (ctx: ParameterizedContext) => {
   const {
     url,
-    html = htmlstr,
+    html,
     fullPage,
     width = 375,
     height = 667,
@@ -66,24 +64,24 @@ export const urlToImage = async (ctx: ParameterizedContext) => {
     });
   }
 
+  const base64 = await page.screenshot({ encoding: "base64" });
+  const imgUrl = `data:image/png;base64,${base64}`;
+  ctx.body = {
+    data: imgUrl,
+    code: 200,
+    message: "成功~",
+  };
 
-  // const base64 = await page.screenshot({ encoding: "base64" });
-  // const imgUrl = `data:image/png;base64,${base64}`
-  const buffer = await page.screenshot();
-  ctx.set({
-    "Content-Type": "application/octet-stream", //告诉浏览器这是一个二进制文件
-    "Content-Disposition": "attachment; filename=buffer.jpg", //告诉浏览器这是一个需要下载的文件
-  });
-  ctx.body = buffer;
+  // const buffer = await page.screenshot();
+
+  // ctx.set({
+  //   "Content-Type": "application/octet-stream", //告诉浏览器这是一个二进制文件
+  //   "Content-Disposition": "attachment; filename=buffer.jpg", //告诉浏览器这是一个需要下载的文件
+  // });
+  // ctx.body = buffer;
 
   // 关闭实例
   // await browser.close();
-
-  // ctx.body = {
-  //   data: buffer,
-  //   code: 200,
-  //   message: "成功~",
-  // };
 };
 
 // 第一种 buffer返回
@@ -106,7 +104,6 @@ export const urlToImage = async (ctx: ParameterizedContext) => {
  */
 
 // 第三种直接返回base64，如上栗所示
-
 
 // ===================================分割线============================================
 

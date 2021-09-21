@@ -1,8 +1,12 @@
 import Koa from "koa";
-import * as Router from "koa-router";
-import * as bodyParser from "koa-bodyparser";
-import * as koaCors from "koa2-cors";
-import * as koaStatic from "koa-static";
+// import * as Router from "koa-router";
+// import * as bodyParser from "koa-bodyparser";
+// import * as koaCors from "koa2-cors";
+// import * as koaStatic from "koa-static";
+import Router from "koa-router";
+import bodyParser from "koa-bodyparser";
+import koaCors from "koa2-cors";
+import koaStatic from "koa-static";
 import { urlToImage, urlToPDF } from "./controller/screenshot";
 
 const app = new Koa();
@@ -22,7 +26,7 @@ router.get("/", (ctx) => {
 router.get("/urltoimage1", urlToImage);
 router.post("/htmltoimage", urlToImage);
 router.get("/urltopdf", urlToPDF);
-app.use(koaStatic('./static'))
+app.use(koaStatic("./static"));
 app.use(koaCors());
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());

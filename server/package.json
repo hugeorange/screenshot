@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "description": "基于puppeteer的node截图/前端react组件",
   "main": "index.js",
+  "bin": "./dist/index.js",
   "scripts": {
-    "dev": "nodemon  --watch src -e ts --exec ts-node src/index.ts",
-    "dev1": "nodemon --watch src/**/* -e ts,tsx --exec ts-node src/index.ts",
-    "dev2": "tsc && node src/index.js",
-    "start": "tsc && node dist/index.js"
+    "dev": "nodemon -w src -e ts --exec ts-node src/index.ts",
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "pkg": "pkg . --out-path=dist/"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/MacOS/Chromium"
+    ],
+    "targets": [
+      "node10-macos-x64"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,7 +39,8 @@
     "koa-router": "^10.1.1",
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
-    "puppeteer": "^10.2.0"
+    "puppeteer": "^10.2.0",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",
@@ -40,6 +50,7 @@
     "@types/koa2-cors": "^2.0.2",
     "@types/puppeteer": "^5.4.4",
     "nodemon": "^2.0.12",
+    "pkg": "^5.3.2",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
   }
