@@ -1,8 +1,4 @@
 import Koa from "koa";
-// import * as Router from "koa-router";
-// import * as bodyParser from "koa-bodyparser";
-// import * as koaCors from "koa2-cors";
-// import * as koaStatic from "koa-static";
 import Router from "koa-router";
 import bodyParser from "koa-bodyparser";
 import koaCors from "koa2-cors";

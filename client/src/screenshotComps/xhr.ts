@@ -16,8 +16,6 @@ interface optionType {
   responseType?: resType;
   success: Function;
   error: Function;
-  // success: (res: any) => Promise<any>;
-  // error: (res: any) => Promise<any>;
 }
 
 const $http = {

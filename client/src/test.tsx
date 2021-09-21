@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import $http from "./comps/screenshotComps/xhr";
 
+/**
+ * 测试代码===>废弃
+ * @param props
+ * @returns
+ */
 function AjaxSnap(props) {
   useEffect(() => {}, []);
 

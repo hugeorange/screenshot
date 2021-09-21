@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * 测试组件===>被截图的组件
+ * @returns
+ */
 export default function TestSnapComps() {
   return (
     <div>

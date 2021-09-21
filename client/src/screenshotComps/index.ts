@@ -18,6 +18,7 @@ function snap(snapOpts: snapOpts) {
   const docCopy = document.documentElement.cloneNode(true) as Element;
   const rootElement = docCopy.querySelector(root) as Element;
   rootElement.innerHTML = domstr;
+  // 将html里面的所有script标签过滤掉，因为页面样式仅仅只需要html、css，将其去除减轻puppeteer的解析压力
   const htmlStr = docCopy.outerHTML.replace(
     /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
     ""
@@ -35,6 +36,7 @@ function snap(snapOpts: snapOpts) {
 
 export default snap;
 
+// 直接截取输入的url的页面，如：url: https://www.baidu.com/
 export function snapByUrl(api: string, url: string) {
   return $http
     .post(api, { url })

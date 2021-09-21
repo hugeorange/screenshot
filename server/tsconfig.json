@@ -24,7 +24,7 @@
     "importHelpers": true,
     "outDir": "./dist", // 编译后的目录
     "declaration": true,
-    "declarationDir": "./file", // 指定生成声明文件存放目录
+    "declarationDir": "./types", // 指定生成声明文件存放目录
     "esModuleInterop": true, // ts2.7 允许export=导出，由import from 导入，不用 import * as Koa from 'koa'
   },
   "files": [   // 指定待编译文件
